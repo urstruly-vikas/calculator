@@ -1,0 +1,99 @@
+:root {
+  --bg: #0d1117;
+  --fg: #f5f5f5;
+  --accent: #ffcc00;
+  --operator-color: #ff7b00;
+  --btn-bg: #161b22;
+  --btn-hover: #21262c;
+  --glass: rgba(255, 255, 255, 0.05);
+}
+body {
+  font-family: 'Courier New', monospace;
+  color: var(--fg);
+  margin: 0;
+  background-color: var(--bg);
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.theme-toggle {
+  margin-bottom: 10px;
+  color: var(--fg);
+}
+.calculator {
+  background: var(--glass);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  width: 340px;
+}
+.glass {
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.display-wrapper {
+  background: transparent;
+  margin-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+.expression {
+  font-size: 1.1rem;
+  color: #aaa;
+  min-height: 20px;
+  text-align: right;
+}
+.result {
+  font-size: 2.2rem;
+  text-align: right;
+  color: var(--accent);
+  font-weight: bold;
+  margin-top: 5px;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+button.btn {
+  border: none;
+  padding: 15px 10px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  background: var(--btn-bg);
+  color: var(--fg);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+button.btn:hover {
+  background: var(--btn-hover);
+}
+button.operator {
+  background-color: var(--operator-color);
+  color: #fff;
+}
+button.equal {
+  background-color: var(--accent);
+  color: #000;
+}
+.double {
+  grid-column: span 2;
+}
+body.light-mode {
+  --bg: #f1f1f1;
+  --fg: #111;
+  --btn-bg: #ddd;
+  --btn-hover: #ccc;
+  --operator-color: #fc772a;
+  --accent: #30c46d;
+}
+button:active {
+  transform: scale(0.96);
+}
